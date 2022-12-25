@@ -1,6 +1,7 @@
 package com.techgen.jwt.util;
 
 import com.techgen.exception.CustomerException;
+import com.techgen.jwt.JwtProperties;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -13,8 +14,11 @@ import java.security.Key;
 @Component
 public class JwtUtil {
 
-    @Value("${app.jwt-secret}")
-    private String jwtSecret;
+    private JwtProperties jwtProperties;
+
+    public JwtUtil(JwtProperties jwtProperties) {
+        this.jwtProperties = jwtProperties;
+    }
 
     // get username from Jwt token
     public String getUsername(String token) {
@@ -48,7 +52,7 @@ public class JwtUtil {
 
     private Key key() {
         return Keys.hmacShaKeyFor(
-                Decoders.BASE64.decode(jwtSecret)
+                Decoders.BASE64.decode(jwtProperties.getSecretKey())
         );
     }
 }
