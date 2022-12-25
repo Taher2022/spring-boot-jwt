@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "1d2daae7-727f-44bd-99a6-2338c272c29b",
+		"name": "spring-boot-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5863778"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usernameOrEmail\": \"tali\",\r\n    \"password\": \"tali\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8907/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8907",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0YWhlckBnbWFpbC5jb20iLCJpYXQiOjE2NzE5MzczNDIsImV4cCI6MTY3MTkzNzQ1MX0.4yuIIGd2a6HXyKIPT9wCSNsIXryrs_6PwR5g31EjWYr_w6eyfq63nJzjf43pK9fc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8907/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8907",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0YWhlckBnbWFpbC5jb20iLCJpYXQiOjE2NzE5MzYzMzUsImV4cCI6MTY3MTkzNjQ1NX0.tx8YcXqPG3EeRcnKbaQjvdo21ra-9BOEGkHJfsqcQQm83OxueQyZvgRicptDnkXF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8907/api/customer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8907",
+					"path": [
+						"api",
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0YWhlckBnbWFpbC5jb20iLCJpYXQiOjE2NzE5MzYzMzUsImV4cCI6MTY3MTkzNjQ1NX0.tx8YcXqPG3EeRcnKbaQjvdo21ra-9BOEGkHJfsqcQQm83OxueQyZvgRicptDnkXF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8907/api/customer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8907",
+					"path": [
+						"api",
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0YWhlckBnbWFpbC5jb20iLCJpYXQiOjE2NzE5MzYzMzUsImV4cCI6MTY3MTkzNjQ1NX0.tx8YcXqPG3EeRcnKbaQjvdo21ra-9BOEGkHJfsqcQQm83OxueQyZvgRicptDnkXF",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8907/api/customer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8907",
+					"path": [
+						"api",
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
