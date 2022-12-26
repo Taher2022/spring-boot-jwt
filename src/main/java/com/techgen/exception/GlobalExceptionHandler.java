@@ -13,9 +13,8 @@ import java.util.Date;
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-
     @ExceptionHandler(CustomerException.class)
-    public ResponseEntity<ErrorDto> handleBlogAPIException(CustomerException exception,
+    public ResponseEntity<ErrorDto> handleCustomerException(CustomerException exception,
                                                            WebRequest webRequest){
         ErrorDto errorDetails = new ErrorDto(new Date(), exception.getMessage(),
                 webRequest.getDescription(false));
